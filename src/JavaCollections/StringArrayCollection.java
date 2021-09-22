@@ -1,5 +1,7 @@
 package JavaCollections;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 class Solution
@@ -138,6 +140,89 @@ class Solution
         System.out.println(ans);
     }
 
+    public String morse_hashmap(String s)
+    {
+        HashMap<String,String> hm=new HashMap<String,String>();
+        hm.put("a" , ".-");
+        hm.put("b" , "-...");
+        hm.put("c" , "-.-.");
+        hm.put("d" , "-..");
+        hm.put("e" , ".");
+        hm.put("f" , "..-.");
+        hm.put("g" , "--.");
+        hm.put("h" , "....");
+        hm.put("i" , "..");
+        hm.put("j" , ".---");
+        hm.put("k" , "-.-");
+        hm.put("l" , ".-..");
+        hm.put("m" , "--");
+        hm.put("n" , "-.");
+        hm.put("o" , "---");
+        hm.put("p" , ".--.");
+        hm.put("q" , "--.-");
+        hm.put("r" , ".-.");
+        hm.put("s" , "...");
+        hm.put("t" , "-");
+        hm.put("u" , "..-");
+        hm.put("v" , "...-");
+        hm.put("w" , ".--");
+        hm.put("x" , "-..-");
+        hm.put("y" , "-.--");
+        hm.put("z" , "--..");
+        hm.put(" " , "/");
+
+        s=s.toLowerCase();
+        String ans="";
+        for(int i=0;i<s.length();i++)
+        {
+            ans+=hm.get(s.substring(i,i+1))+" ";
+        }
+        System.out.println(ans);
+        return ans;
+    }
+    public void demorse_hashmap(String s)
+    {
+        HashMap<String,String> hm=new HashMap<String,String>();
+        hm.put("a" , ".-");
+        hm.put("b" , "-...");
+        hm.put("c" , "-.-.");
+        hm.put("d" , "-..");
+        hm.put("e" , ".");
+        hm.put("f" , "..-.");
+        hm.put("g" , "--.");
+        hm.put("h" , "....");
+        hm.put("i" , "..");
+        hm.put("j" , ".---");
+        hm.put("k" , "-.-");
+        hm.put("l" , ".-..");
+        hm.put("m" , "--");
+        hm.put("n" , "-.");
+        hm.put("o" , "---");
+        hm.put("p" , ".--.");
+        hm.put("q" , "--.-");
+        hm.put("r" , ".-.");
+        hm.put("s" , "...");
+        hm.put("t" , "-");
+        hm.put("u" , "..-");
+        hm.put("v" , "...-");
+        hm.put("w" , ".--");
+        hm.put("x" , "-..-");
+        hm.put("y" , "-.--");
+        hm.put("z" , "--..");
+        hm.put(" " , "/");
+        String code[]=s.split("\\s+");
+        String ans="";
+        for(int i=0;i<code.length;i++)
+        {
+           for(Map.Entry<String,String> entry:hm.entrySet())
+           {
+               if(entry.getValue().equals(code[i]))
+                   ans+= entry.getKey();
+           }
+        }
+        System.out.println(ans);
+    }
+
 }
 public class StringArrayCollection {
     public static void main(String args[])
@@ -157,6 +242,8 @@ public class StringArrayCollection {
         String L=sc.nextLine();
         String decode=s1.morsecode(L);
         s1.demorse(decode);
+        String decode1=s1.morse_hashmap(L);
+        s1.demorse_hashmap(decode1);
 
     }
 }
