@@ -3,7 +3,7 @@ package Day1;
 import java.util.Scanner;
 
 public class PatternPrint {
-    public void trianglepattern()
+    public void triangle_pattern()
     {
         for(int i=1;i<=5;i++)
         {
@@ -15,7 +15,7 @@ public class PatternPrint {
         }
     }
 
-    public void squarepattern(int n)
+    public void square_pattern(int n)
     {
         for(int i=1;i<=n;i++)
         {
@@ -33,9 +33,9 @@ public class PatternPrint {
         System.out.println("Enter input for squarepattern");
         int n=sc.nextInt();
         PatternPrint pp=new PatternPrint();
-        pp.trianglepattern();
-        pp.squarepattern(4);
-        pp.squarepattern(n);
+        pp.triangle_pattern();
+        pp.square_pattern(4);
+        pp.square_pattern(n);
     }
 
 
