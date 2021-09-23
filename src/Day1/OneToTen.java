@@ -1,3 +1,5 @@
+package Day1;
+
 public class OneToTen {
     public static void onetoten()
     {

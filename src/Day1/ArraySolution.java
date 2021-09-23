@@ -2,6 +2,7 @@ package Day1;
 
 import java.util.Scanner;
 class Solution{
+
     public void print_array(String ar[])
     {
         System.out.println("array elements are :");

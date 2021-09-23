@@ -1,3 +1,5 @@
+package Day1;
+
 public class Squares {
         public void squares()
         {
