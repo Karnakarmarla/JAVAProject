@@ -4,7 +4,7 @@ class MyThread5 extends Thread{
         try {
             for (int i = 0; i < 10; i++) {
                 System.out.println("Child thread");
-                Thread.sleep(2300);
+                 Thread.sleep(2300);
             }
         }
         catch (InterruptedException e)
