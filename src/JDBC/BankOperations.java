@@ -11,9 +11,11 @@ public class BankOperations {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/bank", "root", "root");
+
             Scanner sc = new Scanner(System.in);
             System.out.println("Enter 1 for Account creation , 2 for Transaction");
             int n = sc.nextInt();
+
             if (n == 1) {
                 System.out.println("Enter Account Type");
                 String accountType = sc.next();
@@ -47,7 +49,9 @@ public class BankOperations {
             con.close();
         }
     }
+
     public static void createAccount(String accountType,String name,String aadhar,int balance,String subTypes[]) throws SQLException {
+
         String q1 = "Insert into Account(UserName,AadharNumber,Balance) values(?,?,?)";
         PreparedStatement p1 = con.prepareStatement(q1, PreparedStatement.RETURN_GENERATED_KEYS);
         p1.setString(1, name);
@@ -78,6 +82,7 @@ public class BankOperations {
         }
 
     }
+
     public static void doTransaction(int accountNumber,String tranxType,int amount) throws SQLException {
         String q1 = "select Balance from Account where AccountNumber=?";
         PreparedStatement p4 = con.prepareStatement(q1);
